@@ -5,7 +5,7 @@ contract Banco {
     // Variable de estado
     address owner;
     
-    // Modificador que comprueba que ejecuta el owner
+    // Modificador que comprueba qué ejecuta el owner
     modifier onlyOwner {
         require(msg.sender == owner);
         _;
@@ -16,10 +16,12 @@ contract Banco {
         owner = _newOwner;
     }
     
+    // Devuelve el owner del contrato
     function getOwner () view public returns (address) {
         return owner;
     }
     
+    // Devuelve el saldo guardado en el contrato
     function getBalance() view public returns(uint256) {
         return address(this).balance;
     }
@@ -29,12 +31,12 @@ contract Banco {
         owner = msg.sender;
     }
     
-    // Enviar saldo a una dirección
+    // Enviar saldo al contrato
     function incrementBalance(uint256 amount) payable public {
         require(msg.value == amount);
     }
     
-    // Recibir saldo a la dirección
+    // Recibir saldo del contrato
     function withdrawBalance() public onlyOwner {
         msg.sender.transfer(address(this).balance);
     }
