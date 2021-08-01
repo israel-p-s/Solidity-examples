@@ -9,3 +9,4 @@ Coches1.sol           =>          https://www.youtube.com/watch?v=_PbU9TE_7bY
 
 Loteria.sol           =>          https://www.youtube.com/watch?v=9-V5ft-FyaM
 
+MyCoin.sol            =>          https://www.youtube.com/watch?v=WLFESDuJOvI
